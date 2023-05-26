@@ -56,16 +56,6 @@ This project is made possible with the help of the following resources:
 
 The project is licensed under the [MIT License](LICENSE).
 
-## Acknowledgements
-
-Special thanks to the following sponsors who support the Laravel framework:
-
-- [DevSquad](https://devsquad.com)
-- [Curotec](https://www.curotec.com/services/technologies/laravel/)
-- [OP.GG](https://op.gg)
-- [WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)
-- [Lendio](https://lendio.com)
-
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
