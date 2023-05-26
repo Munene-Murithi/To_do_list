@@ -42,21 +42,32 @@
                         
 
                         <hr class="my-4">
-
+                        <form action="{{ route('todos.index') }}" method="GET" class="mb-3">
+                            <div class="input-group">
+                                <select name="sort" class="form-select" onchange="this.form.submit()">
+                                    <option value="">Sort By</option>
+                                    <option value="name" {{ request()->input('sort') === 'name' ? 'selected' : '' }}>Name</option>
+                                    <option value="description" {{ request()->input('sort') === 'description' ? 'selected' : '' }}>Description</option>
+                                    <option value="created_at" {{ request()->input('sort') === 'created_at' ? 'selected' : '' }}>Created At</option>
+                                </select>
+                                <button type="submit" class="btn btn-primary">Sort</button>
+                            </div>
+                        </form>
+                        
                         
                         
                         <div class="card mt-4">
                             <div class="card-body">
                                 @foreach($todos as $todo)
                                 <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
-                                    <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                                    <li class="list-group-item d-flex  justify-content-between ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
                                         <div class="form-check">
                                             <input class="form-check-input me-0" type="checkbox" value="" id="flexCheckChecked1"
                                                 aria-label="..." checked>
                                         </div>
                                     </li>
-                                    <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
-                                        <p class="lead fw-normal mb-0">{{ $todo->name }} </p><p class="mx-auto lead "> {{ $todo->description }}</span></p>
+                                    <li class="list-group-item px-3 py-1 d-flex  flex-grow-1 border-0 bg-transparent">
+                                        <p class="lead fw-normal mb-0">{{ $todo->name }} </p><p class="mx-auto align-m lead "> {{ $todo->description }}</span></p>
                                 
                                     </li>
                                     <hr>

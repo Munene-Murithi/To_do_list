@@ -8,34 +8,45 @@ use App\Models\Todo;
 
 class TodoController extends Controller
 {
-    public function index(){
+   
+    public function index(Request $request)
+{
+    $sort = $request->input('sort');
 
-        $todo = Todo::all();
-        return view('index')->with('todos', $todo);
-    
+    // Fetch todos based on the sorting parameter
+    if ($sort === 'name') {
+        $todos = Todo::orderBy('name')->get();
+    } elseif ($sort === 'description') {
+        $todos = Todo::orderBy('description')->get();
+    } elseif ($sort === 'created_at') {
+        $todos = Todo::orderBy('created_at')->get();
+    } else {
+        $todos = Todo::all();
     }
-    public function showMain(){
 
-        $todo = Todo::all();
-        return view('main')->with('todos', $todo);
-    
-    }
+    return view('main')->with('todos', $todos);
+}
      
     
     
     public function create(){
         return view('create');
     }
-    public function details(Todo $todo){
 
-        return view('details')->with('todos', $todo);
-    
-    }
+
+
+
     
     public function edit(Todo $todo)
 {
     return view('edit')->with('todo', $todo);
 }
+
+
+
+
+
+
     public function update(Todo $todo){
 
         try {
@@ -59,6 +70,11 @@ class TodoController extends Controller
         return redirect('/main');
 
     }
+
+
+
+
+
     public function delete(Todo $todo){
 
         $todo->delete();
@@ -66,6 +82,12 @@ class TodoController extends Controller
         return redirect('/main');
 
     }
+
+
+
+
+
+
     public function store(Request $request)
     {
         try {

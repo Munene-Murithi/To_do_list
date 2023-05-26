@@ -14,14 +14,13 @@ use App\Http\Controllers\TodoController;
 |
 */
 
-Route::get('/', [TodoController::class, 'index']);
 Route::get('/main', [TodoController::class, 'showMain']);
+
+Route::get('/main', [TodoController::class, 'index'])->name('todos.index');
+
 
 Route::get('create', [TodoController::class, 'create']);
 Route::post('store-data', [TodoController::class, 'store']);
-
-
-Route::get('details/{todo}', [TodoController::class, 'details']);
 
 Route::put('update/{todo}', [TodoController::class, 'update'])->name('update');
 Route::get('edit/{todo}', [TodoController::class, 'edit'])->name('edit');
