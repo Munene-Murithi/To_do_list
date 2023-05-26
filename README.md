@@ -17,8 +17,8 @@ The to-do app aims to provide a platform for users to manage their tasks and sta
 ## Screenshots
 
 <p align="center">
-<img src="screenshots/Screenshot (7).png" alt="Screenshot 1">
-<img src="screenshots/Screenshot (8).png" alt="Screenshot 2">
+<img src="screenshots/Screenshot (1).png" alt="Screenshot 1">
+<img src="screenshots/Screenshot (2).png" alt="Screenshot 2">
 </p>
 
 ## Installation
